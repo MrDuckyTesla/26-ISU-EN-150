@@ -13,7 +13,6 @@ public class EightDirectionalMove extends MoveSet {
 	private float maxSpeed, currSpeed, scale = 1;  // How much object is allowed to move in a frame
 	private Point totalDist;  // The total amount that the object has moved in a frame
 	private Rect xywh;
-	private Entity c;
 	
 	public EightDirectionalMove() {this.instantiate(new Rect(0, 0, 28, 28), 3, 3);}
 	public EightDirectionalMove(Rect xywh, float speed) {this.instantiate(xywh, speed, 1);}
@@ -24,7 +23,6 @@ public class EightDirectionalMove extends MoveSet {
 	@Override
 	public void move(Entity c) {
 		if (Room.pause) {this.isIdle = true;}
-		this.c = c;
 		Point p; Trigger t = c.getTrigger();
 		if (t != null && t.getTriggerType() == Triggers.DELETE) {
 			setForceWalk(true); setCanChange(false); this.setDoubSpeed(); 
@@ -74,7 +72,7 @@ public class EightDirectionalMove extends MoveSet {
 	
 	private Point getPotential(int dir) {
 		
-		if (c.currRoom.pause) {return new Point();}
+		if (Room.pause) {return new Point();}
 		
 		Point s = new Point();
 		if (this.isIdle) {return s;} float speed = this.currSpeed;

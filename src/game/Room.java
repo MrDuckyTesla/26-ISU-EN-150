@@ -14,7 +14,7 @@ public class Room {
 	
 	public static final int CHUNK_SIZE = 200;
 	public static int encounter = 0;
-	private int WIDTH_CHUNK, HEIGHT_CHUNK, marxHash;
+	private int WIDTH_CHUNK, HEIGHT_CHUNK;
 	public static boolean pause = false;
 	public long startMusic = 0, win= 0;
 	
@@ -161,8 +161,8 @@ public class Room {
 				}
 				if (startMusic > System.currentTimeMillis()) {
 					ToolKit.getApp().text("Now Playing: OURLOVANIA - Magentium", 200, 325);
-					Main.s.amp(0.3f);
 					Main.s.loop();
+					Main.s.amp(0.03f);
 				}
 				
 				

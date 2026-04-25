@@ -4,7 +4,6 @@ import game.Room;
 import game.entity.abilities.Ability;
 import game.entity.movement.*;
 import game.entity.trigger.Trigger;
-import game.menu.TextBox;
 import game.util.ToolKit;
 import processing.core.PImage;
 
